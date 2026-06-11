@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Capgemmini-Calender-Assesment_616bd7a1"
+        },
+        {
+            "type": "java",
             "name": "CommandInterface",
             "request": "launch",
             "mainClass": "CommandInterface",
