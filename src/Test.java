@@ -53,7 +53,7 @@ public class Test {
         }
     }
 
-    public static void test2() { // This test is to check the remove event functionality and that the events are listed in order of start time
+    public static void test2() { // This test is to check the remove event functionality
         System.out.println("== Test 2 ==");
         Month month = new Month();
         System.out.println("adding events to day 0");
