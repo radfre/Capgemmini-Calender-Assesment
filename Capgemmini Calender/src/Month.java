@@ -3,15 +3,23 @@ public class Month {
 
     public Month(){
         days = new Day[30]; 
-        for (Day day : days) {
-            day = new Day(); 
+        for ( int i = 0 ; i < days.length; i++) {
+            days[i] = new Day(); 
+        }
+    }
+    public Month(int numberOfDays){
+        days = new Day[numberOfDays]; 
+        for ( int i = 0 ; i < days.length; i++) {
+            days[i] = new Day(); 
         }
     }
 
     public Day getDay(int dayNumber){
+        System.out.println("Getting day number: " + dayNumber + " out of " + (days.length - 1));
         if (dayNumber >= 0 && dayNumber <= days.length-1) {
             return days[dayNumber]; // return the requested day (adjusting for 0-based index)
+        } else {
+            return null; // return null if the day number is out of range
         }
-        return null; // return null if the day number is out of range
     }
 }
