@@ -21,4 +21,7 @@ public class Month {
             return null; // return null if the day number is out of range
         }
     }
+    public Day[] getDays(){
+        return days; // return the array of days in the month
+    }
 }
