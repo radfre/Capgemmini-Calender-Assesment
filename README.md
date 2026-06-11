@@ -93,3 +93,5 @@ Purpose: Verify titles and descriptions can be updated.
 Result: PASS
 
 To run the tests, execute the Test.java file.
+
+`java .\src\ Test.java`
