@@ -1,12 +1,28 @@
 public class Event {
     private int startTime;
     private int duration;
+    private String title;
+    private String description;
     // time is represented in minutes from the start of the day (e.g., 0 for 12:00 AM, 60 for 1:00 AM, etc.)
 
     public Event(int startTime, int duration){
-        // constructor logic to initialize the event with the provided start time and duration
         this.startTime = startTime;
         this.duration = duration;
+        this.title = ""; // default title
+        this.description = ""; // default description
+    }
+    
+    public Event(int startTime, int duration, String title){
+        this.startTime = startTime;
+        this.duration = duration;
+        this.title = title;
+        this.description = ""; // default description
+    }
+    public Event(int startTime, int duration, String title, String description){
+        this.startTime = startTime;
+        this.duration = duration;
+        this.title = title;
+        this.description = description;
     }
 
     public int getStartTime(){
@@ -14,6 +30,12 @@ public class Event {
     }
     public int getDuration(){
         return duration;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public String getDescription(){
+        return description;
     }
     public int getEndTime(){
         int endTime = startTime + duration; // calculate end time based on start time and duration
