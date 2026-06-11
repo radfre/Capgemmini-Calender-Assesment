@@ -54,12 +54,22 @@ public class Day {
         
     }
 
+    public boolean isEventScheduled(int startTime){
+        for(Event existingEvent : events){
+            if (existingEvent.getStartTime() == startTime){
+                return true; // return true if an event is scheduled at the given start time
+            }
+        }
+        return false; // return false if no overlapping event is found
+    }
+
     public Event nextAvailableTimeSlot(int startTime, int duration){
         events.sort((e1, e2) -> Integer.compare(e1.getStartTime(), e2.getStartTime())); // sort events by start time
         for (int i = 0; i < events.size()-1; i++){
-            if(events.get(i).getEndTime() >= startTime && events.get(i+1).getStartTime() >= startTime + duration){
-                return new Event(events.get(i).getEndTime(), duration); // return the next available time slot as an event
+            if(startTime + duration <= events.get(i+1).getStartTime() && startTime >= events.get(i).getEndTime()){
+                return new Event(events.get(i).getEndTime(), events.get(i+1).getStartTime());
             }
+
 
         }
         return new Event(0, 0); // return a default event if no available time slot is found
