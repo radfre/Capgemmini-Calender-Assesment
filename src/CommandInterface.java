@@ -324,7 +324,7 @@ public class CommandInterface {
                 // Add event logic here
                 break;
             } else if (input.equalsIgnoreCase("n")) {
-                break;
+                return;
             } else {
                 System.out.println("Invalid input, please enter 'y' or 'n'.");
             }
