@@ -1,4 +1,14 @@
 public class Test {
+
+    public static void main(String[] args) throws Exception {
+        Test.test1();
+        Test.test2();
+        Test.test3();
+        Test.test4();
+        
+    }
+
+
     public static void test1() { // this test is to check listing all events and listing all remaining events for a given start time and a given day
         System.out.println("== Test 1 ==");
         Month month = new Month();
