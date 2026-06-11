@@ -371,4 +371,10 @@ public class CommandInterface {
             }
         }
     }
+
+    private static String MinutesToTime(int minutes) {
+        int hours = minutes / 60;
+        int mins = minutes % 60;
+        return String.format("%02d:%02d", hours, mins);
+    }
 }
