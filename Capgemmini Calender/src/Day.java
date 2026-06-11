@@ -7,6 +7,7 @@ public class Day {
         events = new ArrayList<Event>();
         events.add(new Event(0,0, "Start of day"));
         events.add(new Event(1440,0, "End of day"));
+        events.add(new Event(500,30, "Test"));
     }
     
     public ArrayList<Event> listAllEvents(){
@@ -62,5 +63,14 @@ public class Day {
 
         }
         return new Event(0, 0); // return a default event if no available time slot is found
+    }
+
+    public boolean ConflictingEventExists(Event event){
+        for(Event existingEvent : events){
+            if (existingEvent.overlapsWith(event)){
+                return true; // return true if an event overlaps with the given start time and duration
+            }
+        }
+        return false; // return false if no overlapping event is found
     }
 }
