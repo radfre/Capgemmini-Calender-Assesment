@@ -15,7 +15,6 @@ public class Month {
     }
 
     public Day getDay(int dayNumber){
-        System.out.println("Getting day number: " + dayNumber + " out of " + (days.length - 1));
         if (dayNumber >= 0 && dayNumber <= days.length-1) {
             return days[dayNumber]; // return the requested day (adjusting for 0-based index)
         } else {

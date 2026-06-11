@@ -10,10 +10,12 @@ public class Day {
     }
     
     public ArrayList<Event> listAllEvents(){
+        events.sort((e1, e2) -> Integer.compare(e1.getStartTime(), e2.getStartTime())); // sort events by start time
         return events;
     }
 
     public ArrayList<Event> listAllRemainingEvents(int startTime){
+        events.sort((e1, e2) -> Integer.compare(e1.getStartTime(), e2.getStartTime())); // sort events by start time
         ArrayList<Event> remainingEvents = new ArrayList<Event>();
         for (Event event : events){
             if (event.getStartTime() >= startTime){
@@ -21,6 +23,15 @@ public class Day {
             }
         }
         return remainingEvents;
+    }
+
+    public Event getEvent(int startTime){
+        for (Event event : events){
+            if (event.getStartTime() == startTime){
+                return event; // return the event if it matches the start time and duration
+            }
+        }
+        return null; // return null if no matching event is found
     }
 
     public void addEvent(Event event){
@@ -32,8 +43,14 @@ public class Day {
         events.add(event);
     }
 
-    public void removeEvent(Event event){
-        events.remove(event);
+    public void removeEvent(int startTime){
+        for (Event event : events){
+            if (event.getStartTime() == startTime){
+                events.remove(event);
+                return;
+            }
+        }
+        
     }
 
     public Event nextAvailableTimeSlot(int startTime, int duration){

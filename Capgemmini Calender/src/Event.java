@@ -25,27 +25,49 @@ public class Event {
         this.description = description;
     }
 
-    public int getStartTime(){
-        return startTime;
-    }
-    public int getDuration(){
-        return duration;
-    }
-    public String getTitle(){
-        return title;
-    }
-    public String getDescription(){
-        return description;
-    }
-    public int getEndTime(){
-        int endTime = startTime + duration; // calculate end time based on start time and duration
-        return endTime; // return the calculated end time
-    }
     public boolean overlapsWith(Event otherEvent){
         if (this.getStartTime() < otherEvent.getEndTime() && this.getEndTime() > otherEvent.getStartTime()) {
             return true; // events overlap
         }
         return false; // events do not overlap
     }
+
+    public int getStartTime(){
+        return startTime;
+    }
+    
+    public int getDuration(){
+        return duration;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public int getEndTime(){
+        int endTime = startTime + duration; // calculate end time based on start time and duration
+        return endTime; // return the calculated end time
+    }
+
+    public void setStartTime(int startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
 }
 
