@@ -52,7 +52,7 @@ This design follows object-oriented programming principles by separating respons
 The application prevents overlapping events from being scheduled on the same day. If a conflict is detected, the user is prompted to enter a different time.
 
 ## Future Imporvents
-* Save and Load Calender
+* Save and Load calendar
 * Support Real Calender Dates and Years
 * Add Recuring Events
 * Add Event Categories
@@ -60,7 +60,7 @@ The application prevents overlapping events from being scheduled on the same day
 * Improve Time and Display using HH:MM Formating
 * Utile RealTime such as the Java Date and Time API
 
-## Learnign Outcomes
+## Learning Outcomes
 This project demonstrates:
 
 * Object-Oriented Programming principles
